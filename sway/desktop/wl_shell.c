@@ -24,6 +24,8 @@ static const char *get_prop(struct sway_view *view, enum sway_view_prop prop) {
 	if (wl_shell_view_from_view(view) == NULL) {
 		return NULL;
 	}
+	wlr_log(L_DEBUG, "************* HERE (2) ****************");
+	wlr_log(L_DEBUG, "Toplevel: '%s'", view->wlr_xdg_surface_v6->toplevel);
 	switch (prop) {
 	case VIEW_PROP_TITLE:
 		return view->wlr_wl_shell_surface->title;
